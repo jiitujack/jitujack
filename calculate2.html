@@ -1,0 +1,97 @@
+<html>
+    <head>
+
+        <style>
+            #div{
+                border: 5px gray;
+                background:linear-gradient(to right,pink,yellow);
+                width: 300px;
+                height: 400px;
+                margin: auto;
+                border-radius: 10px;
+                
+            }
+            button{
+                margin: 10px;
+                width: 77px;
+                height: 35px;
+                font-size: 2rem;
+                text-shadow: 3px blue;
+                border-radius: 10%;
+                
+            }
+            input{
+                width: 100%;
+                padding: 20px;
+            
+            }
+            #inputtext{
+                background-color:rgb(248, 207, 215);
+                 font-size: 1.5rem ;
+            }
+            #equal{
+                background-color: rgb(91, 248, 99);
+            }
+
+            #clear{
+                width: 59%;
+                background-color: khaki;
+                border-radius: 5px;
+                
+            }
+        </style>
+    </head>
+    <body>
+                <div id="div">
+                <input type="text" id="inputtext">
+            <br>  
+                <button onclick="getNumber(1)"> 1</button>
+                <button onclick="getNumber(2)"> 2</button>
+                <button onclick="getNumber(3)"> 3</button>
+<br>
+                <button onclick="getNumber(4)"> 4</button>
+                <button onclick="getNumber(5)"> 5</button>
+                <button onclick="getNumber(6)"> 6</button>
+    <br>    
+                <button onclick="getNumber(7)"> 7</button>
+                <button onclick="getNumber(8)"> 8</button>
+                <button onclick="getNumber(9)"> 9</button>
+        <br>        
+                <button onclick="getNumber('+')"> +</button>
+                <button onclick="getNumber('-')"> -</button>
+                <button onclick="getNumber('*')"> *</button>
+            <br>    
+                <button onclick="getNumber('/')"> /</button>
+                <button onclick="getNumber(0)"> 0</button>
+                <button onclick="getNumber('=')" id="equal"> =</button><br>
+                <button onclick="getNumber('.')"> .</button>
+                <button onclick="getNumber('c')" id="clear"> clear</button>
+
+            </div>
+
+        <script>
+            var flag=0;
+            function getNumber(i)
+            {     
+                var x=i;
+                if(x==='=')
+                {
+                    document.getElementById("inputtext").value=eval(document.getElementById("inputtext").value);
+                }else if(x==='c'){
+                    document.getElementById("inputtext").value=' ';
+                }
+                else if(x==='+' || x==='-' || x==='*' || x==='/'){
+                        if(flag==0){
+                            document.getElementById("inputtext").value+=i;
+                            flag=1;
+                        }
+                }
+                else{
+                    document.getElementById("inputtext").value+=i;
+                    flag=0;
+                }
+            }
+               
+        </script>
+    </body>
+</html>
